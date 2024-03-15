@@ -1,4 +1,5 @@
-﻿using DSharpPlus;
+﻿using BaraBot.Utils;
+using DSharpPlus;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.Entities;
@@ -14,24 +15,39 @@ namespace BaraBot.Commands
 {
     public class BaraCommands : BaseCommandModule
     {
-        [Command("bara")]
+        //[Command("bara")]
+        //public async Task BaraPhrase(CommandContext context)
+        //{
+        //    String[] BaraFrases = new String []{ "PANTIIIII", "Pero yo..te amo","La de mandar cv se la saben?","Juega Dios","Paga Dios","Se la gastan en babasonicos",
+        //    "Paga jm el helado","Pero para","Osea yo","Yo vote a M****","Es que estoy gaga","Esa cosa verde","Mañana se labura abz","DEJEN DE MANCHAR A VUOL","Ppppppero","Se acaba la joda",
+        //    "Todos acá boludeando y uno acá LABURANDO"};
+        //    Random rmd = new Random();
+        //    var index = rmd.Next(0, BaraFrases.Length);
+
+        //    var message = new DiscordEmbedBuilder
+        //    {
+        //        Title = "Tu bara frase es: ",
+        //        Description = BaraFrases[index],
+        //        Color=DiscordColor.Red,
+        //    };
+        //    await context.Channel.SendMessageAsync(embed: message);
+        //}
+        [Command("vuol")]
         public async Task BaraPhrase(CommandContext context)
         {
-            String[] BaraFrases = new String []{ "PANTIIIII", "Pero yo..te amo","La de mandar cv se la saben?","Juega Dios","Paga Dios","Se la gastan en babasonicos",
-            "Paga jm el helado","Pero para","Osea yo","Yo vote a M****","Es que estoy gaga","Esa cosa verde","Mañana se labura abz","DEJEN DE MANCHAR A VUOL","Ppppppero","Se acaba la joda",
-            "Todos acá boludeando y uno acá LABURANDO"};
+            String[] BaraFrases = new String[]{"Nuuuuuuuu","Pppppppppppeeroo","Yo no miro anime","Hace 4 años no miro anime","Na duchate","Qque tiroides",
+                "Emoji perrito",Emoji.Point_Right+Emoji.Point_Left,Emoji.Shower+"?"};
             Random rmd = new Random();
             var index = rmd.Next(0, BaraFrases.Length);
 
             var message = new DiscordEmbedBuilder
             {
-                Title = "Tu bara frase es: ",
+                Title = "Tu vuol frase es: ",
                 Description = BaraFrases[index],
-                Color=DiscordColor.Red,
+                Color = DiscordColor.Red,
             };
             await context.Channel.SendMessageAsync(embed: message);
         }
-
         [Command("limpiarBaraFrases")]
         public async Task Clear(CommandContext ctx, int cantidad)
         {
